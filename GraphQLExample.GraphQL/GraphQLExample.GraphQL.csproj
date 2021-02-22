@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GraphQLExample.Data\GraphQLExample.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HotChocolate.Abstractions" Version="11.0.9" />
+      <PackageReference Include="HotChocolate.Data" Version="11.0.9" />
+      <PackageReference Include="HotChocolate.Data.EntityFramework" Version="11.0.9" />
+    </ItemGroup>
+
+</Project>

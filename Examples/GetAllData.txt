@@ -1,0 +1,17 @@
+query{
+  case{
+    id,
+    reference,
+    createdAt,
+    description,
+    resolved,
+    client{
+      id,
+      fullName
+    },
+    representative{
+      id,
+      fullName
+    },
+  }
+}
