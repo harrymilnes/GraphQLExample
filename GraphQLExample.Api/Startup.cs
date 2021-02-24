@@ -2,6 +2,7 @@ using GraphQL.Server.Ui.Playground;
 using GraphQL.Server.Ui.Voyager;
 using GraphQLExample.Data.Context;
 using GraphQLExample.GraphQL.Query;
+using GraphQLExample.GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,9 @@ namespace GraphQLExample.Api
             services.AddPooledDbContextFactory<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Context")));
             services
                 .AddGraphQLServer()
-                .AddQueryType<Query>()
+                .AddQueryType<CaseQuery>()
+                .AddType<CaseType>()
+                .AddFiltering()
                 .AddProjections();
         }
 

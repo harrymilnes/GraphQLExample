@@ -6,10 +6,11 @@ using HotChocolate.Data;
 
 namespace GraphQLExample.GraphQL.Query
 {
-    public class Query
+    public class CaseQuery
     {
         [UseDbContext(typeof(DataContext))]
         [UseProjection]
+        [UseFiltering]
         public IQueryable<Case> GetCase([ScopedService] DataContext dataContext)
         {
             return dataContext.Case;

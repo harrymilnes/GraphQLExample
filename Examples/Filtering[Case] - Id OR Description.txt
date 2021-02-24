@@ -1,0 +1,13 @@
+query{
+  case(where:  
+  { 
+    or:[
+      { id: { eq: 1 } },
+      { description: { contains: "dog" } }
+    ]
+  })
+  {
+    id,
+    description
+  }
+}
