@@ -14,5 +14,14 @@
                 FullName = fullName
             };
         }
+        
+        public static Client Create(
+            string fullName)
+        {
+            return new()
+            {
+                FullName = fullName
+            };
+        }
     }
 }

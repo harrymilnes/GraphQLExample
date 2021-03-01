@@ -1,0 +1,24 @@
+mutation{
+  createCase(createCaseModel: {
+    description: "Teenage mutant ninja turtles",
+    reference: "Mutation Reference",
+    representative: {
+      fullName: "David Richards"
+    },
+    client: {
+      fullName: "Harry Ballsach"
+    }
+  })
+  {
+    createdAt,
+    description,
+    representative {
+      id,
+      fullName
+    },
+    client {
+      id,
+      fullName
+    }
+  }
+}

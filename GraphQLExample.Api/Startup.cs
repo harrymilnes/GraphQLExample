@@ -1,6 +1,7 @@
 using GraphQL.Server.Ui.Playground;
 using GraphQL.Server.Ui.Voyager;
 using GraphQLExample.Data.Context;
+using GraphQLExample.GraphQL.Mutations;
 using GraphQLExample.GraphQL.Query;
 using GraphQLExample.GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,7 @@ namespace GraphQLExample.Api
                 .AddQueryType<CaseQuery>()
                 .AddType<CaseType>()
                 .AddFiltering()
+                .AddMutationType<CaseMutation>()
                 .AddProjections();
         }
 

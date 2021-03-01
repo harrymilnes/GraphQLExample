@@ -14,6 +14,7 @@ namespace GraphQLExample.Data.Entities
         
         public int ClientId { get; private init; }
         public virtual Client Client { get; private init; }
+        
         public static Case Create(
             int id,
             string reference,
@@ -31,6 +32,22 @@ namespace GraphQLExample.Data.Entities
                 Resolved = resolved,
                 RepresentativeId = representativeId,
                 ClientId = clientId
+            };
+        }
+        
+        public static Case Create(
+            string reference,
+            string description,
+            Representative representative,
+            Client client)
+        {
+            return new()
+            {
+                Reference = reference,
+                CreatedAt = DateTime.UtcNow,
+                Description = description,
+                Representative = representative,
+                Client = client
             };
         }
     }

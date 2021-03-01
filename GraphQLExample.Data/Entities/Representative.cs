@@ -14,5 +14,14 @@
                 FullName = fullName
             };
         }
+        
+        public static Representative Create(
+            string fullName)
+        {
+            return new()
+            {
+                FullName = fullName
+            };
+        }
     }
 }
