@@ -1,0 +1,12 @@
+subscription{
+  caseCreatedSubscription{
+    createdAt,
+    description,
+    representative{
+      fullName
+    },
+    client{
+      fullName
+    }
+  }
+}

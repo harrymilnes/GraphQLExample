@@ -3,6 +3,7 @@ using GraphQL.Server.Ui.Voyager;
 using GraphQLExample.Data.Context;
 using GraphQLExample.GraphQL.Mutations;
 using GraphQLExample.GraphQL.Query;
+using GraphQLExample.GraphQL.Subscriptions;
 using GraphQLExample.GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,7 +32,9 @@ namespace GraphQLExample.Api
                 .AddType<CaseType>()
                 .AddFiltering()
                 .AddMutationType<CaseMutation>()
-                .AddProjections();
+                .AddSubscriptionType<CaseSubscription>()
+                .AddProjections()
+                .AddInMemorySubscriptions();
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,6 +43,8 @@ namespace GraphQLExample.Api
 
             app.UseHttpsRedirection();
 
+            app.UseWebSockets();
+            
             app.UseRouting();
 
             app.UseAuthorization();
